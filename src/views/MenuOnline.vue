@@ -2667,7 +2667,7 @@ h3, h4, h5, p, span, div {
   top: 10px;
   right: 10px;
   border: none;
-  background: rgb(228, 3, 3);
+  background: rgb(255, 82, 82);
   color: white;
   width: 28px;
   height: 28px;
@@ -4064,6 +4064,7 @@ font-size: 11px;
     border-radius: 14px;
     background: #f9fafb;
   }
+  
  /* header modal */
   .modal-card .export-title {
     background: linear-gradient(
@@ -4418,99 +4419,7 @@ font-size: 11px;
 .mobile-bottom-bar .cart-icon-wrap i {
   color: inherit;
 }
- /* Modal khung */
-  .modal-card.modal-wide {
-    width: 92vw;
-    height: 60vh;
-    max-height: 60vh;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  }
 
-  /* Layout 1 cột */
-  .modal-content {
-    display: flex !important;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  /* ===== ẢNH: GIẢM CHIỀU CAO ===== */
-  .modal-left .modal-img {
-    height: 24vh;          /* 👈 GIẢM */
-    max-height: 200px;
-    object-fit: contain;
-    background: #000;
-  }
-
-  /* ===== MAIN CONTENT ===== */
-  .modal-right {
-    padding: 10px 12px;
-    gap: 6px;
-    overflow: hidden;      /* 👈 KHÔNG SCROLL */
-  }
-
-  /* ===== TEXT SCALE DOWN ===== */
-  .modal-title {
-    font-size: 15px;
-    font-weight: 800;
-    margin: 2px 0;
-    line-height: 1.2;
-  }
-
-  .modal-desc {
-    font-size: 12px;
-    line-height: 1.35;
-    margin-bottom: 4px;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 3;     /* 👈 tối đa 3 dòng */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .modal-price {
-    font-size: 18px;
-    margin: 4px 0 6px;
-  }
-
-  .meta-tag {
-    font-size: 11px;
-    padding: 3px 8px;
-  }
-
-  /* ===== QTY GỌN LẠI ===== */
-  .modal-qty {
-    margin: 4px 0 6px;
-    gap: 8px;
-  }
-
-  .modal-qty input {
-    width: 44px;
-    height: 30px;
-    font-size: 13px;
-  }
-
-  .modal-qty button {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-  }
-
-  /* ===== NOTE ===== */
-  .modal-right textarea {
-    font-size: 12px;
-    padding: 6px 8px;
-    min-height: 40px;
-  }
-
-  /* ===== ADD BUTTON ===== */
-  .modal-right .add-btn {
-    margin-top: 6px;
-    padding: 9px 0;
-    font-size: 14px;
-  }
 /* BADGE */
 .cart-badge {
   position: absolute;
@@ -4546,8 +4455,31 @@ font-size: 11px;
   60%  { transform: scale(0.95); }
   100% { transform: scale(1); }
 }
+  /* ===== MODAL CHI TIẾT MOBILE – NHỎ LẠI ===== */
+  .modal-card.modal-wide {
+    width: 92vw !important;     /* 👈 hẹp hơn */
+    max-width: 380px;
+    max-height: 75vh;           /* 👈 thấp lại */
+    overflow: hidden;
+  }
 
+  .modal-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
 
+  .modal-left .modal-img {
+    width: 100%;
+    height: auto;          /* 🔥 KHÔNG ÉP CAO */
+    max-height: 30vh;      /* 🔥 ẢNH NGẮN LẠI */
+    min-height: unset;     /* 🔥 BỎ min-height desktop */
+
+    object-fit: contain;   /* 🔥 KHÔNG CẮT ẢNH */
+    background: #000;
+  }
+  
 }
 /* =========================
    FIX MODAL DANH MỤC MOBILE
